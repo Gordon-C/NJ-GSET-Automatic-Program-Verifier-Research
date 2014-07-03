@@ -41,4 +41,12 @@ module Search{
         index := index + 1;
     }
   }
+
+  predicate sorted(a: array<int>, low: int, high : int)
+    requires a != null && 0 <= low < high < a.Length;
+    reads a;
+  {
+    forall j, k :: low <= j < k <= high ==> a[j] <= a[k]
+  }
+  
 }
