@@ -19,10 +19,10 @@ import Search
 	      invariant forall j, k :: 0 <= j < sortedUntil <= k < a.Length ==> a[j] <= a[k]; //all sorted elements are less than or = to unsorted elements
 	      invariant forall j :: i <= j < a.Length ==> a[i] <= a[j]; //current element being inspected is less than elements after it (array is sorted every time you finish inner loop)
 	      /*
-	        Line 18 states array[0..sortedUntil) is sorted every time the inner loop is finished, meaning the sorted portion will grow and still be 
+	        Line 20 states array[0..sortedUntil) is sorted every time the inner loop is finished, meaning the sorted portion will grow and still be 
 	        sorted at each iteration of the loop. Since every element in the unsorted portion is greater than every element in
-	        sorted portion (established by line 17), then adding an element to the sorted portion from the unsorted portion will maintain
-	        "sortedness." Furthermore, by line 17, the shrunken unsorted portion contains only elements greater than the increased
+	        sorted portion (established by line 19), then adding an element to the sorted portion from the unsorted portion will maintain
+	        "sortedness." Furthermore, by line 19, the shrunken unsorted portion contains only elements greater than the increased
 	        sorted portion. Repeat this logic until the entire array is sorted.
 	      */
 	      //invariant forall j :: 0 <= j < sortedUntil ==> a[i] >= a[j]; //current element being inspected is greater than all elements in sorted portion
